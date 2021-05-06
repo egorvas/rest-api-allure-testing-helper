@@ -33,7 +33,7 @@ describe('Google', function() {
 
 ## Features
 
-######Request
+### Request
 You can send any type by calling object of the Request class.
 Requests are building with [Axios](https://github.com/axios/axios), so you can provide any options to your request, example:
 ```js
@@ -43,7 +43,7 @@ const response = await r.get("https://google.com", {headers: {'X-Custom-Header':
 ```
 Read more about axios options at the [axios web site](https://axios-http.com/docs/req_config).
 
-######Console output
+### Console output
 
 By default, every request printing information about himself at the console, example:
 ```bash
@@ -72,7 +72,7 @@ describe('Google', function() {
 });
 ```
 
-######Checks
+### Checks
 You can add results of the [chai](https://github.com/chaijs/chai) asserts directly to the allure report by using embedded "checks" functionality.
 There are three different ways how you can do this:
 1) Using checks parameter of the request call. You should provide a function with chai asserts. Function gets as parameter wrapped chai.expect() function with full axios response, response data and response status. It will put information about asserts directly to the request allure step, example:
