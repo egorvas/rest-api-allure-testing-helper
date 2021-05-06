@@ -137,22 +137,22 @@ async function getResponse(options) {
             throw new Error(error.message);
         }
     }
-    response.checkResponse = (checks) =>
-        generateCheckFunction(response, ``, `Check response`, checks);
+    response.checkResponse = (checks, message = "Check response") =>
+        generateCheckFunction(response, "", message, checks);
     response.checkField = (field, checks) =>
         generateCheckFunction(response, `data.${field}`, `Check field ${field}`, checks);
     response.checkStatus = (checks) =>
-        generateCheckFunction(response, `status`, `Check status code`, checks);
+        generateCheckFunction(response, "status", "Check status code", checks);
     response.checkBody = (checks) =>
-        generateCheckFunction(response, `data`, `Check body`, checks);
+        generateCheckFunction(response, "data", "Check body", checks);
     response.checkRequest = (checks) =>
-        generateCheckFunction(response, `data.request.res`, `Check request`, checks);
+        generateCheckFunction(response, "data.request.res", "Check request", checks);
     response.checkStatusText = (checks) =>
-        generateCheckFunction(response, `statusText`, `Check request`, checks);
+        generateCheckFunction(response, "statusText", "Check request", checks);
     response.checkConfig = (checks) =>
-        generateCheckFunction(response, `config`, `Check request`, checks);
+        generateCheckFunction(response, "config", "Check request", checks);
     response.checkHeaders = (checks) =>
-        generateCheckFunction(response, `headers`, `Check request`, checks);
+        generateCheckFunction(response, "headers", "Check request", checks);
     return response
 }
 
