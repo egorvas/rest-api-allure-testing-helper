@@ -3,8 +3,10 @@ const runtime = require('allure-mocha/runtime');
 const {ContentType} = require('allure-js-commons');
 const curlirize = require('axios-curlirize');
 const _ = require('lodash');
+const chaiJsonScheme = require('chai-json-schema');
 const chai = require('chai');
 chai.use(allureChaiPlugin);
+chai.use(chaiJsonScheme);
 curlirize(axios);
 
 function allureChaiPlugin(chai, utils) {
