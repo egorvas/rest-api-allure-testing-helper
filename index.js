@@ -6,7 +6,10 @@ const _ = require('lodash');
 const chai = require('chai');
 const chaiJsonScheme = require('chai-json-schema-ajv');
 chai.use(allureChaiPlugin);
-chai.use(chaiJsonScheme);
+chai.use(chaiJsonScheme.create({
+        verbose: true
+    })
+);
 curlirize(axios);
 
 function allureChaiPlugin(chai, utils) {
